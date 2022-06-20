@@ -1,4 +1,5 @@
-[[Latex header]]
+
+
 # Types of DE
 ## Homogenous form
 $$\diff yx{} = \frac {f_1(x,y)}{f_2(x,y)}$$Here both $f_1$ and $f_2$ are [[Homogenous fucntion]] of same order \ degree. Then, let $\frac yx =v \implies \diff yx{} = v +x \diff vx{}$. Therefore above equation  transforms to $$\diff yx{} = f\left(\frac yx\right) \implies v + x\diff vx{} = f(v) \implies \frac {dv}{-v+f(v)}=\frac{dx}{x}$$
@@ -33,7 +34,7 @@ If DE is not in *exact form* then multiplying a I.F will turn the equation to a 
 	1. $xdy+ydx = d(xy)$
 	2. $xdy-ydx \implies I.F = \frac1{x^2}$
 	3. $xdy-ydx \implies I.F = \frac1{x^2}$
-* If $M(x,y)$ and $N(x,y)$  are homogenous then $I.F = \frac1{Mx+Ny}$ such that $Mx+Ny \neq0$.
+* If $M(x,y)$ and $N(x,y)$  are homogeneous then $I.F = \frac1{Mx+Ny}$ such that $Mx+Ny \neq0$.
 * If the DE is in form $$f_1(xy)dx+f_2(xy)dy=0$$ and $Mx-Ny\neq0$ then $I.F = \frac1{Mx-Ny}$
 * If $$\frac1N \left(\pdiff My - \pdiff Nx\right)=f(x)$$ then $I.F  = e^{\int f(x) dx}$
 * If $$\frac1M \left(\pdiff My -\pdiff Nx\right)=-f(y)$$ then $I.F= e^{\int -f(y) dy}$

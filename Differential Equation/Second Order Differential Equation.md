@@ -1,4 +1,5 @@
-[[Latex header]]
+
+
 
 # Types of DE
 ## Linear DE with constant coeffcient :-
