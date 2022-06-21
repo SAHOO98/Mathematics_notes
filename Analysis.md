@@ -1,18 +1,3 @@
-$$
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\com}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\e}{\varepsilon}
-\newcommand{\sequence}[1]{(#1_n)_{n=1}^{\infty}}
-\newcommand{\braces}[1]{\left\{#1\right\}}
-\newcommand{\ra}{\rightarrow}
-\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\diff}[3]{\frac{d^{#3}#1}{d#2^{#3}}}
-\newcommand{\summ}[2]{\sum_{#1}^{#2}}
-\newcommand{\fbraks}[1]{\left(#1\right)}
-\newcommand{\tbraks}[1]{\left[#1\right]}
-$$
 # Gamma and Beta function
 
 $$\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt$$
@@ -30,7 +15,7 @@ $$\beta(x,y) = \int_0 ^1 t^{x-1}(1-t)^{y-1}dt = 2\int_0 ^{\frac{\pi}{2}} \sin^{2
 
 ## Defnitions
 
-1. A sequence of real number is a function,$f: \N \ra \R$ . Commonly represented as $\sequence{a} = \braces{a_1, a_2, a_3, \cdots}$.
+1. A sequence of real number is a function,$f:\N \ra \R$ . Commonly represented as $\sequence{a} = \braces{a_1, a_2, a_3, \cdots}$.
 
 2. A series is a summation of the sequnce elements. Series of above sequence is written as:- $$
    A = \sum_{n \in \N} a_n=\sum_{n=1}^{\infty} a_n = a_1+a_2+a_3+\cdots

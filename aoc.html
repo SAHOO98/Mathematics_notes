@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Axiom of choice and all</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Axiom of choice and all</h1>
+</header>
+<h1 id="definition-of-aoc">Definition of AOC</h1>
+<p>Let <span class="math inline">\(\mathcal{A}\)</span> be a non-empty collection of non-empty sets. A function <span class="math inline">\(f : \mathcal{A}\rightarrow \cup\mathcal{A}\)</span> is called a <strong>choice function for <span class="math inline">\(\mathcal{A}\)</span></strong> if <span class="math inline">\(f(A) \in A\)</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>.</p>
+<p>Or more compactly. <span class="math display">\[\forall \mathcal{A} [\emptyset \notin \mathcal{A} \implies \exists f : \mathcal{A} \rightarrow \cup \mathcal{A},\text{ } \forall A \in \mathcal{A} (f(A)\in A) ]\]</span></p>
+<h1 id="partial-ordered-setposet">Partial Ordered set(POSET):</h1>
+<p>Let <span class="math inline">\(P\neq \emptyset\)</span>. Then <span class="math inline">\((P, \le)\)</span> is poset if: * (Reflexive) <span class="math inline">\(x\le x\)</span> <span class="math inline">\(\forall x \in P\)</span> * (Antisymmetric) <span class="math inline">\(x\le y\)</span> and <span class="math inline">\(y \le x\)</span> then <span class="math inline">\(x=y\)</span> <span class="math inline">\(\forall x,y \in P\)</span> * (Transitive) <span class="math inline">\(x\le y\)</span> and <span class="math inline">\(y \le z\)</span> then <span class="math inline">\(x\le y\)</span> <span class="math inline">\(\forall x,y,z \in P\)</span></p>
+<p><span class="math inline">\(\le\)</span> will be called total order when every element of <span class="math inline">\(P\)</span> is comparable.</p>
+<h1 id="upper-bound-and-lower-bound">Upper bound and lower bound</h1>
+<p>Let <span class="math inline">\((P, \le)\)</span> be a POSET. Let <span class="math inline">\(A \subseteq P\)</span>. * <span class="math inline">\(p\in P\)</span> is an <strong>upper bound</strong> of A if and only if for all <span class="math inline">\(a \in A\)</span>, <span class="math inline">\(a\le p\)</span>. * <span class="math inline">\(p\in P\)</span> is an <strong>lower bound</strong> of A if and only if for all <span class="math inline">\(a \in A\)</span>, <span class="math inline">\(p\le a\)</span>.</p>
+<h2 id="least-upper-bound-and-greatest-lower-bound">Least Upper bound and Greatest Lower Bound</h2>
+<ul>
+<li><p><strong>LUB property:</strong> If a subset of a poset is bounded above then there will always exist a least upper bound(LUB)(supremum) of that subset.</p></li>
+<li><p><strong>GLB property:</strong> If a subset of a poset is bounded below then there will always exist a greatest lower bound(GLB)(infimum) of that subset.</p></li>
+</ul>
+<h1 id="maximal-and-minimal-element">Maximal and minimal element</h1>
+<p>Let <span class="math inline">\((P, \le)\)</span> be a POSET. Let <span class="math inline">\(A \subseteq P\)</span>. * <strong>Maximal element of A</strong>: <span class="math inline">\(m \in A\)</span> is a maximal element of <span class="math inline">\(A\)</span> if <span class="math inline">\(p\in A\)</span> satisfies <span class="math inline">\(m\le p\)</span> then <span class="math inline">\(m=p\)</span>. Another way of saying is “nothing is bigger than <span class="math inline">\(m\)</span> in A”. (<span class="math inline">\(\nexists y \in A\)</span> s.t <span class="math inline">\(m\le y\)</span> and <span class="math inline">\(m \neq y\)</span>)</p>
+<ul>
+<li><strong>Minimal element of A</strong>: <span class="math inline">\(m \in A\)</span> is a manimal element of <span class="math inline">\(A\)</span> if <span class="math inline">\(p\in A\)</span> satisfies <span class="math inline">\(p\le m\)</span> then <span class="math inline">\(m=p\)</span>. Another way of saying is “nothing is smaller than <span class="math inline">\(m\)</span> in A”. (<span class="math inline">\(\nexists y \in A\)</span> s.t <span class="math inline">\(y\le m\)</span> and <span class="math inline">\(m \neq y\)</span>)</li>
+</ul>
+<h1 id="greatest-element-and-least-element">Greatest element and Least element</h1>
+<p>Let <span class="math inline">\((P, \le)\)</span> be a POSET. Let <span class="math inline">\(A \subseteq P\)</span>.</p>
+<ul>
+<li><strong>Greatest Element:</strong> <span class="math inline">\(g \in P\)</span> is the greatest element of of <span class="math inline">\(A\)</span> if <span class="math inline">\(g \in A\)</span> satisfies <span class="math inline">\(a \le g\)</span> for all <span class="math inline">\(a \in A\)</span>.</li>
+<li><strong>Least Element:</strong> <span class="math inline">\(g \in P\)</span> is the least element of of <span class="math inline">\(A\)</span> if <span class="math inline">\(g \in A\)</span> satisfies <span class="math inline">\(g \le a\)</span> for all <span class="math inline">\(a \in A\)</span>.</li>
+</ul>
+<h1 id="zorns-lemma">Zorn’s Lemma</h1>
+<p>Let <span class="math inline">\((P, \le)\)</span> be a non-empty partial order such that every chain(Total ordered subset of P) in <span class="math inline">\(P\)</span> has an upper bound then P has a maximal element.</p>
+</body>
+</html>

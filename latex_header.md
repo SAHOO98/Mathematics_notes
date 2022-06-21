@@ -1,5 +1,4 @@
-$$
-\newcommand{\R}{\mathbb{R}}
+$$\newcommand{\R}{\mathbb{R}}
 \newcommand{\com}{\mathbb{C}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -13,3 +12,4 @@ $$
 \newcommand{\fbraks}[1]{\left(#1\right)}
 \newcommand{\tbraks}[1]{\left[#1\right]}
 $$
+

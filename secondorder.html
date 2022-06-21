@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>latex_header</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span class="math display">\[\newcommand{\R}{\mathbb{R}}
+\newcommand{\com}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\sequence}[1]{(#1_n)_{n=1}^{\infty}}
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\diff}[3]{\frac{d^{#3}#1}{d#2^{#3}}}
+\newcommand{\summ}[2]{\sum_{#1}^{#2}}
+\newcommand{\fbraks}[1]{\left(#1\right)}
+\newcommand{\tbraks}[1]{\left[#1\right]}
+\]</span></p>
+<h1 id="types-of-de">Types of DE</h1>
+<h2 id="linear-de-with-constant-coeffcient--">Linear DE with constant coeffcient :-</h2>
+<p><span class="math display">\[
+\begin{align}
+a_0 \diff yxn + a_1 \diff yx{n-1}+a_2\diff yx{n-2}+ \cdots + a_{n-1}\diff yx{} +a_n y &amp;= Q\\
+\implies \sum_{i=0}^n a_i \diff yx {n-i} &amp;=Q, \braces{a_j} \in \R \\
+\implies \sum_{i=0}^n a_{n-i} \diff yx {i} &amp;=Q \\
+\implies \sum_{i=0}^n a_{n-i} D^iy &amp;=Q \\
+\implies f(D)y &amp;=Q \text { where,} D^i =  \diff{}{x}{i}
+\end{align}\tag{1}
+\]</span> If <span class="math inline">\(Q \equiv0\)</span> then the DE is called <strong>homogenous equation</strong> otherwise <strong>non-homogenous</strong>. ### General Solution/ Complete solution <span class="math display">\[f(D) = Q\]</span> This equation can be solved by conjugation of Complementary fucntion and particular integral. ### Complementary Function(C.F) To find complementary fucntion from(1), we need to do <span class="math inline">\(Q\equiv 0\)</span>, <span class="math inline">\(y=1\)</span> and <span class="math inline">\(D = m\)</span> in (1) to get a <span class="math inline">\(n^{th}\)</span> degree polynomial as following: <span class="math display">\[\sum_i a_{n-i} m^i = 0\tag{2}\]</span> Let <span class="math inline">\(\braces{m_i}_{i=1}^n\)</span> be the roots of (2). The value of C.F will depend on the natue of the roots. 1. When <span class="math inline">\(\braces{m_i}_{i=1}^n\)</span> are all real and distinct: <span class="math display">\[C.F = \sum_i c_i e^{m_ix}\]</span> 2. When some roots repeat: Say <span class="math inline">\(m_1 = m_2=m_3=m\)</span> ,then <span class="math display">\[C.F= (c_1+c_2x+c_3x^2)e^m + \sum_{i=4}^n c_i e^{m_ix}\]</span>More generally, if <span class="math inline">\(k\)</span> roots repeat out of <span class="math inline">\(n\)</span> roots then <span class="math display">\[C.F = \left(\sum_{j=1}^k c_jx^{j-1}\right)e^{mx} + \sum_{i=k+1}^n c_i e^{m_ix}\]</span> 3. When roots contains complex conjugates. Say out of <span class="math inline">\(n\)</span> roots <span class="math inline">\(k\)</span> are complex roots then <span class="math display">\[C.F = \summ{i=1}{k/2}e^{\alpha_ix}\left(c_i\cos(\beta_ix)+ k_i\cos(\beta_ix) \right) + \summ{i=k+1}{n}c&#39;_ie^{m_ix}\]</span> <strong>Note:-</strong> The complex roots comes in pairts as <span class="math inline">\(m_j = \alpha_j \pm \beta_j\)</span> . Hence the first summation is from 1 to k/2.</p>
+<h3 id="particular-integralp.i">Particular Integral(P.I)</h3>
+<p><span class="math display">\[P.I = \frac 1{f(D)} .Q\]</span> From equation (1). Following are the rules for evaluating P.I: 1. <span class="math inline">\(f(D) =D\)</span> <span class="math display">\[P.I = \frac 1D Q = \int Q\cdot dx\]</span> 2. (Most general process) <span class="math inline">\(f(D) = D-a\)</span> <span class="math display">\[P.I = e^{ax}\int e^{-ax}Qdx\]</span> Suppose <span class="math display">\[P.I = \frac 1 {(D-a)(D-b)}Q = \frac 1{D-a}\left[e^{bx} \int e^{-bx}dx \right]=e^{ax}\int e^{-ax}\left[e^{bx} \int e^{-bx}dx\right]dx\]</span></p>
+<ol start="3" type="1">
+<li><p>If <span class="math inline">\(Q = e^{ax}\)</span> , where <span class="math inline">\(a \in \R\)</span> . If <span class="math inline">\(f(a)\neq 0\)</span>, then <span class="math display">\[P.I  = \frac 1{f(D)}e^{ax} = \frac{e^{ax}}{f(a)}\]</span>Now, if <span class="math inline">\(f(a) = 0 \implies f(D) = (D-a)^n \phi(D)\)</span> such that <span class="math inline">\(\phi(a)\neq 0\)</span> for some <span class="math inline">\(n \in \N\)</span>. <span class="math display">\[\begin{align} P.I &amp;= \frac 1{(D-a)^n \phi(D)} e^{ax} \\
+ &amp;= \frac 1 {\phi(D)} \left[\frac {e^{ax}}{(D-a)^n}\right]\\
+ &amp;= \frac 1 {\phi(D)} \left[\frac {x^ne^{ax}}{n!}\right] \text{ [Using the Rule.2 from above]} \\ 
+ &amp;= \frac 1 {\phi(a)} \left[\frac {x^ne^{ax}}{n!}\right] \end{align}\]</span></p></li>
+<li><p>If <span class="math inline">\(Q = \sin(ax)\)</span> or <span class="math inline">\(Q = \cos(ax)\)</span>. Substitute <span class="math inline">\(D^2 \ra -a^2\)</span>. Similarly <span class="math inline">\(D^3 \ra -a^2D\)</span> <span class="math display">\[P.I = \frac 1 {f(D)} Q\]</span><strong>Note:- after the substitution use the rule 2.</strong></p></li>
+<li><p>If <span class="math inline">\(Q = x^m\)</span> <span class="math inline">\(\tbraks{m \ge 0, m \in \Z}\)</span>. <span class="math display">\[P.I = \frac 1{f(D)} = \tbraks{f(D)}^{-1}x^m\]</span>Now expand using the binomial.</p></li>
+<li><p>If <span class="math inline">\(Q = e^{ax}v(x)\)</span>, <span class="math display">\[P.I = \frac 1{f(D)}e^{ax}v = e^{ax}\tbraks{\frac {1}{f(D+a)}v}\]</span></p></li>
+<li><p>If <span class="math inline">\(f(D) =D^2 + a^2\)</span> . <span class="math display">\[P.I = \frac 1 {D^2+a^2} \sin{ax} = \frac{-x}{2a} \cos{ax}\]</span> <span class="math display">\[P.I = \frac 1 {D^2+a^2} \cos{ax} = \frac{x}{2a} \sin{ax}\]</span></p></li>
+<li><p>If <span class="math inline">\(Q = x^mv(x)\)</span> <span class="math display">\[\begin{align}P.I &amp;= \frac{x^m v}{f(D)} \\ &amp;= x^m \frac 1{f(D)}v+ mx^{m-1}\tbraks{\diff{}{D}{}\cdot \frac 1{f(D)}}v + ^mC_2x^{m-2}\tbraks{\diff{}{D}{2}\cdot \frac 1{f(D)}}v + ^mC_3x^{m-3}\tbraks{\diff{}{D}{3}\cdot \frac 1{f(D)}}v + \cdots \end{align}\]</span></p></li>
+</ol>
+<h2 id="cauchy-euler-equation.">Cauchy-Euler Equation.</h2>
+<p><span class="math display">\[\summ{i=0}n a_{n-i}x^iD^i = Q\]</span> Substitution, <span class="math inline">\(x = e^z\)</span> <span class="math inline">\(\implies z = \ln x\)</span>. <span class="math inline">\((D&#39;)^k = \diff{}{z}{k}\)</span>, then <span class="math display">\[
+\begin{align}
+&amp;xD \ra D&#39;\\
+&amp;x^2D^2 \ra D&#39;(D&#39;-1) \\
+&amp;x^3D^3 \ra D&#39;(D&#39;-1)(D&#39;-2)\\
+&amp;\vdots\\
+&amp;x^nD^n \ra \prod_{i=0}^{n-1}\fbraks{D-i}
+\end{align}
+\]</span> <strong>A special case for Second degree homogeneous equation</strong> <span class="math display">\[x^2 \diff{y}{x}{2}+ ax\diff{y}{x}{}+by=0\]</span></p>
+<p>Let <span class="math inline">\(y = x^m\)</span>(trial solution). Rearranging and factoring gives the equation: <span class="math display">\[m^2 +(a-1)m +b =0\]</span> Three possible cases for roots: 1. 2 distinct solutions, <span class="math inline">\(m_1,m_2\)</span> <span class="math display">\[y = c_1 x^{m_1}+c_2 x^{m_2}\]</span> 2. Repeated roots, <span class="math display">\[y = (c_1+c_2 \ln x)x^m\]</span> 3. Complex roots, <span class="math display">\[y = x^\alpha\fbraks{c_1\cos(\beta\ln x) + c_2 \sin (\beta \ln x)}\]</span>Where <span class="math inline">\(\alpha = \mathfrak{Re}\braces{m}\)</span> and <span class="math inline">\(\beta = \mathfrak{Im}\braces{m}\)</span></p>
+<h2 id="method-of-variation-parameter">Method of variation Parameter</h2>
+<p><span class="math display">\[\begin{align}
+&amp;\diff{y}{x}{2} + P\diff{y}{x}{} + Qy = R \\
+\iff &amp;y&#39;&#39;+Py&#39;+Qy =R\\
+\end{align}\]</span> Where, <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are polynomials in <span class="math inline">\(\R\)</span>. Let <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> are two solution to the equation. Define Wronskian as:- <span class="math display">\[W(y_1,y_2) = \begin{vmatrix} y_1 &amp; y_2 \\ y&#39;_1 &amp; y&#39;_2\end{vmatrix}\]</span> The general solution can be written as <span class="math inline">\(y = uy_1+v y_2\)</span> , where : <span class="math display">\[
+\begin{matrix}u= \int \frac{-y_2R}{W(y_1,y_2)}dx &amp; v = \int \frac{y_1R}{W(y_1,y_2)}dx\end{matrix}
+\]</span> Note:- <span class="math inline">\(W(y_1,y_2) \neq 0 \implies\)</span> <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> are linearly independent. ### For homogeneous Linear 2nd order</p>
+<p><span class="math display">\[y&#39;&#39;+Py&#39;+Qy=0\]</span> 1. <span class="math inline">\(W(y_1,y_2) \neq 0 \implies\)</span> <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> are linearly independent. 2. <span class="math inline">\(W(y_1,y_2) = 0 \implies\)</span> <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> are linearly dependent. 3. <span class="math inline">\(W(y_1, y_2) =C e^{-\int_{x_0}^x P dx}\)</span> , <span class="math inline">\(x_0, x \in I \subset \R\)</span> .</p>
+</body>
+</html>
